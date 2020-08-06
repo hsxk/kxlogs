@@ -1,0 +1,205 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - Kaya QR Code Generator\n"
+"POT-Creation-Date: 2020-04-03 18:52+0200\n"
+"PO-Revision-Date: 2020-04-03 18:52+0200\n"
+"Last-Translator: \n"
+"Language-Team: kayastudio\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;esc_attr__;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: kaya-qr-code-generator.php:65
+msgid "Other plugins by Kaya Studio"
+msgstr "Autres plugins de Kaya Studio"
+
+#: kaya-qr-code-generator.php:65
+msgid "Other plugins"
+msgstr "Autres plugins"
+
+#: kaya-qr-code-generator.php:91
+msgid "Rate and review this plugin at WordPress.org"
+msgstr "Notez et évaluez cette extension sur WordPress.org"
+
+#: kaya-qr-code-generator.php:91
+msgid "Rate this plugin"
+msgstr "Notez cette extension"
+
+#: kaya-qr-code-generator.php:92
+msgid "Donate to support the advancement of this plugin"
+msgstr "Faites un don pour soutenir l'avancement de cette extension"
+
+#: kaya-qr-code-generator.php:92
+msgid "Donate to this plugin"
+msgstr "Faire un don à cette extension"
+
+#: lib/class.forms.php:64
+msgid "No layout found for field type:"
+msgstr "Aucune disposition trouvée pour le type de champ :"
+
+#: lib/class.forms_qrcode.php:26
+msgid "Title:"
+msgstr "Titre :"
+
+#: lib/class.forms_qrcode.php:27
+msgid "Displayed as widget title or as heading 2 for shortcodes."
+msgstr "Affiché comme titre de widget ou comme titre 2 pour les shortcodes."
+
+#: lib/class.forms_qrcode.php:34
+msgid "Content to encode in QR Code:"
+msgstr "Contenu à encoder dans le QR code :"
+
+#: lib/class.forms_qrcode.php:35
+msgid ""
+"Leave empty to use current page url, or enter content to be encoded in QR "
+"Code."
+msgstr ""
+"Laissez vide pour utiliser l'URL de la page courante, ou entrez le contenu à "
+"encoder dans le QR code."
+
+#: lib/class.forms_qrcode.php:42
+msgid "Use dynamic content (other shortcodes)"
+msgstr "Utiliser du contenu dynamique (autres shortcodes)"
+
+#: lib/class.forms_qrcode.php:48
+msgid "Information repetition level:"
+msgstr "Niveau de répétition de l'information :"
+
+#: lib/class.forms_qrcode.php:49
+msgid "Ability to correct read errors."
+msgstr "Possibilité de corriger les erreurs de lecture."
+
+#: lib/class.forms_qrcode.php:51
+msgid "Low ~7%"
+msgstr "Faible ~7%"
+
+#: lib/class.forms_qrcode.php:52
+msgid "Medium ~15%"
+msgstr "Moyen ~15%"
+
+#: lib/class.forms_qrcode.php:53
+msgid "Quarter ~25%"
+msgstr "Quart ~25%"
+
+#: lib/class.forms_qrcode.php:54
+msgid "High ~30%"
+msgstr "Haut ~30%"
+
+#: lib/class.forms_qrcode.php:61
+msgid "Size:"
+msgstr "Taille :"
+
+#: lib/class.forms_qrcode.php:62
+msgid "Leave empty for automatic size, or enter size in px."
+msgstr "Laissez vide pour une taille automatique, ou entrez une taille en px."
+
+#: lib/class.forms_qrcode.php:68
+msgid "Color:"
+msgstr "Couleur :"
+
+#: lib/class.forms_qrcode.php:69
+msgid "Leave empty for default color, or use Hex color code as \"#000000\"."
+msgstr ""
+"Laissez vide pour la couleur par défaut, ou utilisez un code de couleur "
+"hexadécimal comme \"#000000\"."
+
+#: lib/class.forms_qrcode.php:75
+msgid "Background Color:"
+msgstr "Couleur d’arrière-plan :"
+
+#: lib/class.forms_qrcode.php:76
+msgid "Leave empty for default color, or use Hex color code as \"#FFFFFF\"."
+msgstr ""
+"Laissez vide pour la couleur par défaut, ou utilisez un  code de couleur "
+"hexadécimal comme \"#FFFFFF\"."
+
+#: lib/class.forms_qrcode.php:82
+msgid "Alignment:"
+msgstr "Alignement :"
+
+#: lib/class.forms_qrcode.php:83
+msgid "Horizontal alignment."
+msgstr "Alignement horizontal."
+
+#: lib/class.forms_qrcode.php:85
+msgid "None"
+msgstr "Aucun"
+
+#: lib/class.forms_qrcode.php:86
+msgid "Left"
+msgstr "Gauche"
+
+#: lib/class.forms_qrcode.php:87
+msgid "Center"
+msgstr "Centre"
+
+#: lib/class.forms_qrcode.php:88
+msgid "Right"
+msgstr "Droite"
+
+#: lib/class.forms_qrcode.php:95
+msgid "Add shadows to QR Code image"
+msgstr "Ajouter des ombres à l'image du QR code"
+
+#: lib/class.forms_qrcode.php:101
+msgid "Destination URL:"
+msgstr "URL de destination :"
+
+#: lib/class.forms_qrcode.php:102
+msgid "QR Code image clickable link. URL with http://"
+msgstr "Lien cliquable sur l'image du QR code. URL avec http://"
+
+#: lib/class.forms_qrcode.php:109
+msgid "Open link in a new window"
+msgstr "Ouvrir le lien dans une nouvelle fenêtre"
+
+#: lib/class.forms_qrcode.php:115
+msgid "Image alternate text:"
+msgstr "Texte alternatif de l'image :"
+
+#: lib/class.forms_qrcode.php:116
+msgid "Leave empty for default image alternate text \"QR Code\"."
+msgstr ""
+"Laisser vide pour le texte alternatif de l'image par défaut \"QR code\"."
+
+#: lib/class.metabox_qrcodemetabox.php:57
+msgid "Kaya QR Code Generator"
+msgstr "Kaya QR Code Generator"
+
+#: lib/class.metabox_qrcodemetabox.php:107
+msgid "Download QR Code"
+msgstr "Télécharger le QR Code"
+
+#: lib/class.metabox_qrcodemetabox.php:112
+msgid ""
+"The post must be saved for a QR Code preview with the permalink as content."
+msgstr ""
+"La publication doit être sauvegardé pour un aperçu du QR code avec le lien "
+"permanent comme contenu."
+
+#: lib/class.metabox_qrcodemetabox.php:117
+msgid "The QR Code preview is not available with a dynamic content."
+msgstr "L'aperçu du QR code n'est pas disponible avec un contenu dynamique."
+
+#: lib/class.metabox_qrcodemetabox.php:122
+msgid "Shortcode Generated:"
+msgstr "Shortcode généré :"
+
+#: lib/class.metabox_qrcodemetabox.php:124
+msgid "QR Code Preview:"
+msgstr "Aperçu du QR code :"
+
+#: lib/class.metabox_qrcodemetabox.php:126
+msgid "QR Code settings:"
+msgstr "Paramètres du QR code :"
+
+#: lib/class.widgets_qrcodewidget.php:32
+msgid "Simple QR Code generator"
+msgstr "Simple QR Code generator"
