@@ -178,6 +178,15 @@ class LazyBlocks_Rest extends WP_REST_Controller {
         $block_name       = $request->get_param( 'name' );
         $block_attributes = $request->get_param( 'attributes' );
 
+        // add global data to fix meta data output in preview.
+        global $lzb_preview_block_data;
+        $lzb_preview_block_data = array(
+            'post_id'          => $post_id,
+            'block_context'    => $block_context,
+            'block_name'       => $block_name,
+            'block_attributes' => $block_attributes,
+        );
+
         if ( 0 < $post_id ) {
             // phpcs:ignore
             $post = get_post( $post_id );
@@ -191,7 +200,7 @@ class LazyBlocks_Rest extends WP_REST_Controller {
             return $this->error( 'lazy_block_invalid', esc_html__( 'Invalid block.', 'lazy-blocks' ) );
         }
 
-        if ( isset( $block['code']['single_output'] ) && $block['code']['single_output'] ) {
+        if ( isset( $block['code']['output_method'] ) && 'template' !== $block['code']['output_method'] && isset( $block['code']['single_output'] ) && $block['code']['single_output'] ) {
             $block_context = 'frontend';
         }
 

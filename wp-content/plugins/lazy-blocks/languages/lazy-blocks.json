@@ -172,6 +172,12 @@
          "Documentation": [
             ""
          ],
+         "PRO Survey": [
+            ""
+         ],
+         "Template file <code>%1$s</code> not found.": [
+            ""
+         ],
          "Copied!": [
             ""
          ],
@@ -191,54 +197,6 @@
             ""
          ],
          "Icon Picker": [
-            ""
-         ],
-         "Frontend": [
-            ""
-         ],
-         "Editor": [
-            ""
-         ],
-         "How to use?": [
-            ""
-         ],
-         "Simple text field example see here:": [
-            ""
-         ],
-         "Note 1: if you use blocks as Metaboxes, you may leave this code editor blank.": [
-            ""
-         ],
-         "Note 2: supported custom PHP callback to output block": [
-            ""
-         ],
-         "Single output code for Frontend and Editor": [
-            ""
-         ],
-         "Yes": [
-            ""
-         ],
-         "Output Method": [
-            ""
-         ],
-         "HTML + Handlebars": [
-            ""
-         ],
-         "PHP": [
-            ""
-         ],
-         "Show block preview in editor": [
-            ""
-         ],
-         "Always": [
-            ""
-         ],
-         "Within `selected` block only": [
-            ""
-         ],
-         "Within `unselected` block only": [
-            ""
-         ],
-         "Never": [
             ""
          ],
          "Show in posts": [
@@ -313,6 +271,9 @@
          "Hide if block is not selected": [
             ""
          ],
+         "Yes": [
+            ""
+         ],
          "Label": [
             ""
          ],
@@ -335,6 +296,9 @@
             ""
          ],
          "Save in Meta": [
+            ""
+         ],
+         "How to use?": [
             ""
          ],
          "Meta custom name (optional)": [
@@ -391,10 +355,10 @@
          "Select align options": [
             ""
          ],
-         "GhostKit Extensions": [
+         "Ghost Kit Extensions": [
             ""
          ],
-         "Install GhostKit plugin to use the following settings.": [
+         "Install Ghost Kit plugin to use the following settings.": [
             ""
          ],
          "Install": [
@@ -419,6 +383,18 @@
             ""
          ],
          "Display block with animation on scroll.": [
+            ""
+         ],
+         "Frame": [
+            ""
+         ],
+         "Add border and box shadow to block.": [
+            ""
+         ],
+         "Custom CSS": [
+            ""
+         ],
+         "Write custom CSS on each inserted blocks.": [
             ""
          ],
          "Supports": [
@@ -601,6 +577,18 @@
          "Allows you to reset selected option value to null": [
             ""
          ],
+         "Output Format": [
+            ""
+         ],
+         "Allows you to change attribute output format": [
+            ""
+         ],
+         "Value": [
+            ""
+         ],
+         "Both (Array)": [
+            ""
+         ],
          "Row {{#}}": [
             ""
          ],
@@ -638,9 +626,6 @@
             ""
          ],
          "Multiline": [
-            ""
-         ],
-         "Value": [
             ""
          ],
          "Choices": [

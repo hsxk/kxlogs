@@ -198,7 +198,7 @@ class LazyBlocks_Tools {
             'lazyblocks-tools',
             lazyblocks()->plugin_url() . 'assets/admin/tools/index.min.js',
             array( 'wp-data', 'wp-element', 'wp-components', 'wp-api', 'wp-i18n' ),
-            '2.0.10',
+            '2.1.0',
             true
         );
 

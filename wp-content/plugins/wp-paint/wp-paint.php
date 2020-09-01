@@ -6,7 +6,7 @@
  * Author:          ZetaMatic
  * Author URI:      https://zetamatic.com
  * Text Domain:     wp-paint
- * Version:         0.4.5
+ * Version:         0.4.6
  *
  * @package         Wp_Paint
  */
@@ -21,8 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 // // Define Path.
-define('WPP_PLUGIN_VERSION', '0.4.5');
-define('WPP_PLUGIN_VERSION_HASH', '269a23609b42b3214b67f7202c9a3b75aaa52fcb1e7596e4');
+define('WPP_PLUGIN_VERSION', '0.4.6');
+define('WPP_PLUGIN_VERSION_HASH', '7610ee57c935d32b661f5bf52ece9b564b155559055fd5c7');
 define('WPP_PLUGIN_PATH', dirname(__FILE__));
 define('WPP_PLUGIN_URL', plugins_url('', __FILE__));
 
@@ -97,7 +97,7 @@ if(!function_exists('wp_paint_save_image')) {
       $saved_path = $wpp_upload_data['file'];
       update_attached_file( $post_id, $saved_path );
       $wpp_revisions = @get_post_meta( $post_id, '_wp_attachment_wpp_revisions', true );
-      $wpp_revisions = empty($wpp_revisions) ? [] : $wpp_revisions;
+      $wpp_revisions = (empty($wpp_revisions) || !is_array($wpp_revisions)) ? [] : $wpp_revisions;
       if(!isset($wpp_revisions['full_orig_filename']) || empty($wpp_revisions['full_orig_filename'])) {
         $wpp_revisions['full_orig_filename'] = $original_filename;
       }

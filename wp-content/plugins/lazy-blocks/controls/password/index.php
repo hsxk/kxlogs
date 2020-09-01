@@ -37,7 +37,7 @@ class LazyBlocks_Control_Password extends LazyBlocks_Control {
             'lazyblocks-control-password',
             lazyblocks()->plugin_url() . 'controls/password/script.min.js',
             array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components' ),
-            '2.0.10',
+            '2.1.0',
             true
         );
     }

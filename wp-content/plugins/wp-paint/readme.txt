@@ -3,8 +3,8 @@ Contributors: zetamatic, pitabas106, devadattas
 Donate link: https://zetamatic.com/
 Tags: image editor, photo editor, media editor, media, photo, image
 Requires at least: 4.5
-Tested up to: 5.4
-Stable tag: 0.4.5
+Tested up to: 5.5
+Stable tag: 0.4.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,9 @@ Yes, absolutely we have the pro version of this plugin with extended features. Y
 We are always looking for feedback from you. Whether it's a completely new plugin or adding some custom functionality to any existing plugin, we are always ready to do that. You can contact us at info@zetamatic.com
 
 == Changelog ==
+
+= 0.4.6 =
+* Tested with WordPress 5.5
 
 = 0.4.5 =
 * Resolving Image Format Issue (https://wordpress.org/support/topic/turns-image-format-to-png-without-changing-extension/)

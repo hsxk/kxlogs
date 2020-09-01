@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Lazy Blocks
  * Description:  Gutenberg blocks visual constructor. Custom meta fields or blocks with output without hard coding.
- * Version:      2.0.10
+ * Version:      2.1.0
  * Author:       nK
  * Author URI:   https://nkdev.info/
  * License:      GPLv2 or later
@@ -134,6 +134,7 @@ if ( ! class_exists( 'LazyBlocks' ) ) :
          */
         public function add_actions() {
             add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+            add_action( 'enqueue_block_editor_assets', array( $this, 'constructor_enqueue_scripts' ) );
             add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_script_translations' ), 9 );
         }
 
@@ -141,6 +142,7 @@ if ( ! class_exists( 'LazyBlocks' ) ) :
          * Set plugin Dependencies.
          */
         private function include_dependencies() {
+            require_once $this->plugin_path() . '/classes/class-migration.php';
             require_once $this->plugin_path() . '/classes/class-icons.php';
             require_once $this->plugin_path() . '/classes/class-controls.php';
             require_once $this->plugin_path() . '/classes/class-blocks.php';
@@ -148,6 +150,7 @@ if ( ! class_exists( 'LazyBlocks' ) ) :
             require_once $this->plugin_path() . '/classes/class-tools.php';
             require_once $this->plugin_path() . '/classes/class-rest.php';
             require_once $this->plugin_path() . '/classes/class-dummy.php';
+            require_once $this->plugin_path() . '/classes/class-force-gutenberg.php';
         }
 
         /**
@@ -215,38 +218,22 @@ if ( ! class_exists( 'LazyBlocks' ) ) :
                 'manage_options',
                 'https://lazyblocks.com/documentation/getting-started/'
             );
+
+            // PRO plugin survive link.
+            add_submenu_page(
+                'edit.php?post_type=lazyblocks',
+                esc_html__( 'PRO Survey', 'lazy-blocks' ),
+                esc_html__( 'PRO Survey', 'lazy-blocks' ),
+                'manage_options',
+                'https://forms.gle/oopKhfBanaehVM7aA'
+            );
         }
 
         /**
          * Enqueue admin styles and scripts.
          */
         public function admin_enqueue_scripts() {
-            global $post;
-            global $post_type;
             global $wp_locale;
-
-            if ( 'lazyblocks' === $post_type ) {
-                wp_enqueue_script(
-                    'lazyblocks-constructor',
-                    $this->plugin_url() . 'assets/admin/constructor/index.min.js',
-                    array( 'wp-blocks', 'wp-editor', 'wp-block-editor', 'wp-i18n', 'wp-element', 'wp-components', 'lodash', 'jquery' ),
-                    '2.0.10',
-                    true
-                );
-                wp_localize_script(
-                    'lazyblocks-constructor',
-                    'lazyblocksConstructorData',
-                    array(
-                        'post_id'             => isset( $post->ID ) ? $post->ID : 0,
-                        'allowed_mime_types'  => get_allowed_mime_types(),
-                        'controls'            => $this->controls()->get_controls(),
-                        'controls_categories' => $this->controls()->get_controls_categories(),
-                        'icons'               => $this->icons()->get_all(),
-                    )
-                );
-
-                wp_enqueue_style( 'lazyblocks-constructor', $this->plugin_url() . 'assets/admin/constructor/style.min.css', array(), '2.0.10' );
-            }
 
             wp_enqueue_script( 'date_i18n', $this->plugin_url() . 'vendor/date_i18n/date_i18n.js', array(), '1.0.0', true );
 
@@ -266,7 +253,39 @@ if ( ! class_exists( 'LazyBlocks' ) ) :
                 )
             );
 
-            wp_enqueue_style( 'lazyblocks-admin', $this->plugin_url() . 'assets/admin/css/style.min.css', '', '2.0.10' );
+            wp_enqueue_style( 'lazyblocks-admin', $this->plugin_url() . 'assets/admin/css/style.min.css', '', '2.1.0' );
+            wp_style_add_data( 'lazyblocks-admin', 'rtl', 'replace' );
+            wp_style_add_data( 'lazyblocks-admin', 'suffix', '.min' );
+        }
+
+        /**
+         * Enqueue constructor styles and scripts.
+         */
+        public function constructor_enqueue_scripts() {
+            if ( 'lazyblocks' === get_post_type() ) {
+                wp_enqueue_script(
+                    'lazyblocks-constructor',
+                    $this->plugin_url() . 'assets/admin/constructor/index.min.js',
+                    array( 'wp-blocks', 'wp-editor', 'wp-block-editor', 'wp-i18n', 'wp-element', 'wp-components', 'lodash', 'jquery' ),
+                    '2.1.0',
+                    true
+                );
+                wp_localize_script(
+                    'lazyblocks-constructor',
+                    'lazyblocksConstructorData',
+                    array(
+                        'post_id'             => get_the_ID(),
+                        'allowed_mime_types'  => get_allowed_mime_types(),
+                        'controls'            => $this->controls()->get_controls(),
+                        'controls_categories' => $this->controls()->get_controls_categories(),
+                        'icons'               => $this->icons()->get_all(),
+                    )
+                );
+
+                wp_enqueue_style( 'lazyblocks-constructor', $this->plugin_url() . 'assets/admin/constructor/style.min.css', array(), '2.1.0' );
+                wp_style_add_data( 'lazyblocks-constructor', 'rtl', 'replace' );
+                wp_style_add_data( 'lazyblocks-constructor', 'suffix', '.min' );
+            }
         }
 
         /**
@@ -277,7 +296,7 @@ if ( ! class_exists( 'LazyBlocks' ) ) :
                 return;
             }
 
-            wp_enqueue_script( 'lazyblocks-translation', $this->plugin_url() . 'assets/js/translation.min.js', array(), '2.0.10', false );
+            wp_enqueue_script( 'lazyblocks-translation', $this->plugin_url() . 'assets/js/translation.min.js', array(), '2.1.0', false );
             wp_set_script_translations( 'lazyblocks-translation', 'lazy-blocks', lazyblocks()->plugin_path() . 'languages' );
         }
     }
@@ -308,11 +327,17 @@ if ( ! class_exists( 'LazyBlocks' ) ) :
      */
     // phpcs:ignore
     function get_lzb_meta( $name, $id = null ) {
+        // global variable used to fix `get_lzb_meta` call inside block preview in editor.
+        global $lzb_preview_block_data;
+
         $control_data = null;
 
         if ( null === $id ) {
             global $post;
-            $id = $post->ID;
+
+            if ( isset( $post->ID ) ) {
+                $id = $post->ID;
+            }
         }
 
         // Find control data by meta name.
@@ -339,7 +364,18 @@ if ( ! class_exists( 'LazyBlocks' ) ) :
             }
         }
 
-        $result = get_post_meta( $id, $name, true );
+        $result = null;
+
+        if ( $id ) {
+            $result = get_post_meta( $id, $name, true );
+        } elseif (
+            isset( $lzb_preview_block_data ) &&
+            is_array( $lzb_preview_block_data ) &&
+            isset( $control_data['name'] ) &&
+            isset( $lzb_preview_block_data['block_attributes'][ $control_data['name'] ] )
+        ) {
+            $result = $lzb_preview_block_data['block_attributes'][ $control_data['name'] ];
+        }
 
         // set default.
         if ( ! $result && isset( $control_data['default'] ) && $control_data['default'] ) {
